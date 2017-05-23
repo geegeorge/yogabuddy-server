@@ -3,7 +3,7 @@ from django.conf.urls import url
 # load urls for administration site
 
 # load in functions created in my custom views file
-from yogapp.views import splash, get_all_posts, get_posts_by_id,  get_users_by_id, get_all_poses, get_poses_by_id
+from server.views import splash, get_all_posts, get_posts_by_id,  get_users_by_id, get_all_poses, get_poses_by_id
 
 # NOT USING GET THESE
 # get_users, get_contributors
