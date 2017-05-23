@@ -102,3 +102,6 @@ ENV/
 
 # JetBrains stuff
 .idea/
+
+# Don't persist sqlite
+db.sqlite3
