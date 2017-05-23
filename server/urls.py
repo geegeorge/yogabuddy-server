@@ -1,8 +1,26 @@
+# Match url in browser to module in django project
 from django.conf.urls import url
-from django.contrib import admin
-from server.views import home
+# load urls for administration site
+
+# load in functions created in my custom views file
+from yogapp.views import splash, get_all_posts, get_posts_by_id,  get_users_by_id, get_all_poses, get_poses_by_id
+
+# NOT USING GET THESE
+# get_users, get_contributors
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', home)
+    url(r'^$', splash ), # Splash page
+    url(r'^posts$', get_all_posts), # get all posts (feed)
+    url(r'^posts/(\d+)/$', get_posts_by_id), # get individual post (from feed or profile)
+    url(r'^users/(\d+)/$', get_users_by_id), # get individual user profile (needs AUTH)
+    url(r'^poses$', get_all_poses), # get all poses
+    url(r'^poses/(\d+)/$', get_poses_by_id) # get one pose
+    # url(r'^contributors$', get_contributors) # render contributors page
 ]
+
+# The r means we want to treat it as a raw string that will allow us to use backslashes
+# The ^ tells us thats the beginning of the string
+# The admin part references the administration part of Django
+# The $ means end of string
+# d means digit or number
+# (\d+)/ is allowing us to pass a number in to the url params
