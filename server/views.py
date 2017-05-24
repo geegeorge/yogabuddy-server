@@ -51,3 +51,26 @@ def get_poses_by_id(request, poses):
     cursor.execute("SELECT * FROM yoga_poses WHERE id = %s", [poses])
     result = cursor.fetchall() # all results
     return JsonResponse(result, safe=False)
+
+# Create a posts
+def create_post(request):
+    # cursor = connection.cursor()
+    # cursor.execute("SELECT * FROM yoga_poses WHERE id = %s", [poses])
+    # result = cursor.fetchall() # all results
+    # return JsonResponse(result, safe=False)
+
+# Create use, check for duplicate username/email, 
+def create_user(request):
+    cursor = connection.cursor()
+    cursor.execute("SELECT * FROM users")
+    # result = cursor.fetchall() # all results
+    # return JsonResponse(result, safe=False)
+
+# Login and send cookie
+def login(request):
+    # cursor = connection.cursor()
+    # cursor.execute("SELECT * FROM yoga_poses WHERE id = %s", [poses])
+    # result = cursor.fetchall() # all results
+    # return JsonResponse(result, safe=False)
+
+# Logout and remove cookie/token
