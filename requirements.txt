@@ -3,3 +3,4 @@ Django==1.10.5
 gunicorn==19.7.1
 psycopg2==2.7.1
 django-cors-headers==2.0.2
+djangorestframework==3.6.3
