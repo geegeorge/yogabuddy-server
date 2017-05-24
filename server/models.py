@@ -8,7 +8,7 @@ class Users(models.Model):
     password = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     profile_picture_img = models.TextField(blank=True, null=True)
-    bio = models.TextField()
+    bio = models.TextField(blank=True, null=True)
     admin = models.NullBooleanField(default=False)
     moderator = models.NullBooleanField(default=False)
     professional = models.NullBooleanField(default=False)
