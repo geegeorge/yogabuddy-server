@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
                 ('post_video', models.CharField(blank=True, max_length=500, null=True)),
                 ('created_at', models.DateTimeField(max_length=500)),
                 ('updated_at', models.DateTimeField(max_length=500)),
-                ('pose_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Poses')),
+                ('pose_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Poses')),
             ],
         ),
         migrations.CreateModel(
@@ -86,36 +86,36 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='posts',
             name='user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Users'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Users'),
         ),
         migrations.AddField(
             model_name='post_likes',
             name='post_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Posts'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Posts'),
         ),
         migrations.AddField(
             model_name='post_likes',
             name='user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Users'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Users'),
         ),
         migrations.AddField(
             model_name='comments',
             name='post_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Posts'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Posts'),
         ),
         migrations.AddField(
             model_name='comments',
             name='user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Users'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Users'),
         ),
         migrations.AddField(
             model_name='comment_likes',
             name='comment_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Comments'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Comments'),
         ),
         migrations.AddField(
             model_name='comment_likes',
             name='user_id',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='yoga.Users'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='server.Users'),
         ),
     ]

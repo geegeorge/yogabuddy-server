@@ -1,5 +1,10 @@
-from django.db import connection, transaction
-from django.http import JsonResponse, HttpResponse
+from django.db import connection, transaction, models
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.contrib import messages
+from django.core.urlresolvers import reverse
+from django.apps import apps, AppConfig
+from rest_framework import permissions,viewsets
+from .models import Posts
 
 # LETS US DO PSQL STUFF
 @transaction.atomic
@@ -55,12 +60,17 @@ def get_poses_by_id(request, poses):
     return JsonResponse(result, safe=False)
 
 # Create a posts
-# def create_post(request):
-#     # cursor = connection.cursor()
-#     # cursor.execute("SELECT * FROM yoga_poses WHERE id = %s", [poses])
-#     # result = cursor.fetchall() # all results
-#     # return JsonResponse(result, safe=False)
-#
+def add_post(request):
+    postInfo = AppConfig.get_model(Posts, required_ready=True)
+    form = postInfo(request.POST)
+    print("requestpost", request.POST)
+    form.save()
+
+    # cursor = connection.cursor()
+    # cursor.execute("SELECT * FROM yoga_poses WHERE id = %s", [poses])
+    # result = cursor.fetchall() # all results
+    # return JsonResponse(result, safe=False)
+
 # # Create use, check for duplicate username/email,
 # def create_user(request):
 #     cursor = connection.cursor()

@@ -9,18 +9,18 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('yoga', '0006_auto_20170522_1302'),
+        ('server', '0006_auto_20170522_1302'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='comments',
             name='post_id',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='yoga.Posts'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='server.Posts'),
         ),
         migrations.AlterField(
             model_name='comments',
             name='user_id',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='yoga.Users'),
+            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='server.Users'),
         ),
     ]

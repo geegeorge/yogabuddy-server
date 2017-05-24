@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('yoga', '0002_auto_20170521_2344'),
+        ('server', '0002_auto_20170521_2344'),
     ]
 
     operations = [
