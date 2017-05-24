@@ -1,5 +1,5 @@
 from django.db import connection, transaction
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse, HttpResponse
 
 # LETS US DO PSQL STUFF
 @transaction.atomic
@@ -42,7 +42,9 @@ def get_all_poses(request):
     cursor = connection.cursor()
     cursor.execute("SELECT * FROM yoga_poses")
     result = cursor.fetchall() # all results
-    return JsonResponse(result, safe=False)
+    response = JsonResponse(result)
+    return response.result
+    # return JsonResponse(result)
     # result = cursor.fetchmany(10) # limiting search to 10 results
 
 # GRABS A SINGLE pose
