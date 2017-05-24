@@ -15,9 +15,9 @@ urlpatterns = [
     url(r'^users/(\d+)/$', get_users_by_id), # get individual user profile (needs AUTH)
     url(r'^poses$', get_all_poses), # get all poses
     url(r'^poses/(\d+)/$', get_poses_by_id) # get one pose
-    url(r'^create_user$', create_user) # post to  users
-    url(r'^login$', login) # django auth send cookie/token
-    url(r'^logout$', logout) # remove cookie/token
+    # url(r'^create_user$', create_user) # post to  users
+    # url(r'^login$', login) # django auth send cookie/token
+    # url(r'^logout$', logout) # remove cookie/token
     # url(r'^contributors$', get_contributors) # render contributors page
 ]
 
